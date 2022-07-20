@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:  #6dd5ed;
+}
+
+h1{
+    text-align: center;
+    color: aqua;
+    background-color: red;
+}
+
+.playerStats{
+    text-align: center;
+    font-size: large;
+    font-weight: bold ;
+}
+
+.gameArea{
+    display: flex;    
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+} 
+
+.tile{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 50px;
+    position: cover;
+    user-select: none;
+    line-height: 95px;
+}
+
+.tile:hover{
+    background-color: #03a4c8;
+}
+
+.one, .two, .three{
+    border-left: none;
+} 
+
+.one, .four, .seven{
+    border-top: none;
+} 
+
+.seven, .eight, .nine{
+    border-right: none;
+}
+
+.three, .six, .nine{
+    border-bottom: none;
+}
+
+.x{
+    color: red;
+}
+
+.o{
+    color: blue;
+}
+
+table,th,tr,td{
+    border: 3px solid black;
+}
+
+.result{
+    font-size: larger;
+    font-weight: bold ;
+}
+
+.xWin {
+    animation: 1s anim-xWin ease 2;
+    color: red;
+    font-size: 50px;
+  }
+
+
+  @keyframes anim-xWin{
+    0%{
+        opacity: 0;
+        transform: rotateX(90def);
+    }
+    50% {
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+}
+
+.oWin {
+    animation: 1s anim-oWin ease 2;
+    color: blue;
+    font-size: 50px;
+  }
+
+@keyframes anim-oWin{
+    0%{
+        opacity: 0;
+        transform: rotateX(90def);
+    }
+    50% {
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+}
+
+.drawResult {
+    animation: 2s anim-drawResult ease 3;
+  }
+  
+  @keyframes anim-drawResult {
+    0% {
+      color: blue;
+      transform: scale(0);
+      opacity: 0;
+      text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+    25% {
+      color: red;
+      transform: scale(2);
+      opacity: 1;
+      text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      color: blue;
+      transform: scale(1);
+      opacity: 1;
+      text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+  

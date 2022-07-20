@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>TIC-TAC-TOE</title>
+    <link rel="icon" type="image/x-icon" href="tic-tac-toe.png">
+</head>
+<body>
+
+                <!--------------------------- headerSection --------------------------->
+
+    <h1>TIC-TAC-TOE</h1>
+    
+<br>
+<div class="container">
+    <br>
+    <table class="table">
+
+        <!--------------------------- ScoreBoard --------------------------->
+
+        <thead>
+              <tr>
+                <th class="text-center">X</th>
+                <th class="text-center">O</th>
+                <th class="text-center">Draw</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center xScore">0</td>
+                <td class="text-center oScore">0</td>
+                <td class="text-center draw">0</td>
+              </tr>
+            </tbody>
+        </table>
+
+        <!--------------------------- playerDetails --------------------------->
+
+        <div class="playerStats" onclick="playerTurn()">Player 'X' Turn</div>
+          <br>      
+
+          <!--------------------------- gameBoard --------------------------->
+
+          <div class="row gameArea justify-content-center">
+        
+        <div class="row ">
+            <div class="col-4">
+                <div class="tile one"></div>
+                <div class="tile two"></div>
+                <div class="tile three"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="tile four"></div>
+                <div class="tile five"></div>
+                <div class="tile six"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="tile seven"></div>
+                <div class="tile eight"></div>
+                <div class="tile nine"></div>
+            </div>
+        </div>
+
+        
+        
+        <!--------------------------- RestartGame --------------------------->
+        
+        <div class="col-6 btn"><div><button class="btn btn-success reset">Reset</button>  <button class="btn btn-danger restart">Restart Game</button></div></div>
+    </div>
+  
+       <!--------------------------- winnerStatus --------------------------->
+    
+       <div class="row justify-content-center text-center result"></div>
+    </div>
+    
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
