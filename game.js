@@ -77,23 +77,25 @@ function matchResult(){
 }
 
      
+    
+ 
+    //To reset the game after anyone wins or match drawn
+
+    resetBtn.addEventListener('click',function(){
+
     //To remove the X and O from the tiles
 
     for(let i=0; i<tilesArray.length;i++){
         tilesArray[i].innerHTML=""
     }
 
- 
-    //To reset the game after anyone wins or match drawn
-
-    resetBtn.addEventListener('click',function(){
-
-    //To remove the class from each tile to remove text color
+    
+        //To remove the class from each tile to remove text color
 
     for(let j=0; j<tilesArray.length;j++){
         tilesArray[j].classList.remove('x')|| tilesArray[j].classList.remove('o')
     }
-
+    
     result.innerHTML=""; //to empty the result
     result.classList.remove('xWin') || result.classList.remove('oWin') || result.classList.remove('drawResult') //to remove the class list from result 
     match=true; //to change the match to true so the game continues
