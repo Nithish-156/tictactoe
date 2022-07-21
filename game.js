@@ -48,13 +48,13 @@ function matchResult(){
             match = false; //also change the match to false So game cannot be continue
   
         }else if(tilesArray.at(0).innerHTML =="O" && tilesArray.at(3).innerHTML=="O" && tilesArray.at(6).innerHTML=="O" || 
-             tilesArray.at(1).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(7).innerHTML=="O" ||
-             tilesArray.at(2).innerHTML =="O" && tilesArray.at(5).innerHTML=="O" && tilesArray.at(8).innerHTML=="O" ||
-             tilesArray.at(0).innerHTML =="O" && tilesArray.at(1).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
-             tilesArray.at(3).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(5).innerHTML=="O" ||
-             tilesArray.at(6).innerHTML =="O" && tilesArray.at(7).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"||
-             tilesArray.at(6).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
-             tilesArray.at(0).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"){
+                 tilesArray.at(1).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(7).innerHTML=="O" ||
+                 tilesArray.at(2).innerHTML =="O" && tilesArray.at(5).innerHTML=="O" && tilesArray.at(8).innerHTML=="O" ||
+                 tilesArray.at(0).innerHTML =="O" && tilesArray.at(1).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
+                 tilesArray.at(3).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(5).innerHTML=="O" ||
+                 tilesArray.at(6).innerHTML =="O" && tilesArray.at(7).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"||
+                 tilesArray.at(6).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
+                 tilesArray.at(0).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"){
              
                     result.innerHTML="Player 'O' Wins the game";
                     result.classList.add('oWin');
@@ -62,12 +62,12 @@ function matchResult(){
                     match = false;
 
         }else if(tilesArray.at(0).innerHTML  != "" && tilesArray.at(1).innerHTML != "" && tilesArray.at(2).innerHTML !="" &&
-             tilesArray.at(3).innerHTML != "" && tilesArray.at(4).innerHTML != "" && tilesArray.at(5).innerHTML  !="" &&
-             tilesArray.at(6).innerHTML != "" && tilesArray.at(7).innerHTML != "" && tilesArray.at(8).innerHTML !=""){
-             result.innerHTML = "Match Draw";
-             result.classList.add('drawResult')
-             draw.innerHTML ++;
-             match = false;
+                 tilesArray.at(3).innerHTML != "" && tilesArray.at(4).innerHTML != "" && tilesArray.at(5).innerHTML  !="" &&
+                 tilesArray.at(6).innerHTML != "" && tilesArray.at(7).innerHTML != "" && tilesArray.at(8).innerHTML !=""){
+                    result.innerHTML = "Match Draw";
+                    result.classList.add('drawResult')
+                    draw.innerHTML ++;
+                    match = false;
          }
 }
 
@@ -81,7 +81,7 @@ restartBtn.addEventListener('click', function(){
 
 resetBtn.addEventListener('click',function(){
      
-    //To remove the X and O from the
+    //To remove the X and O from the tiles
 
     for(let i=0; i<tilesArray.length;i++){
         tilesArray[i].innerHTML=""
