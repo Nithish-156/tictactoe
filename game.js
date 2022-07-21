@@ -16,17 +16,17 @@ let tilesArray=Array.from(tiles);
 
 tilesArray.forEach(function (tile){ //forEach method used to apply a function in every element of an array
     tile.addEventListener('click',function(){ 
-        if(currentPlayer.innerHTML=="Player 'O' Turn" && tile.innerHTML=="" && match == true){ //if the player turn is O and the match is true and the selected tile is empty
+        if(currentPlayer.innerHTML=="Player 'O' Turn" && tile.innerHTML=="" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
-            currentPlayer.innerHTML="Player 'X' Turn"; //to change the player,s turn
             matchResult(); //to check the winning combination is satisfied for player O or match is draw
+            currentPlayer.innerHTML="Player 'X' Turn"; //to change the player's turn
 
         }else if(currentPlayer.innerHTML=="Player 'X' Turn" && tile.innerHTML=="" && match == true){
             tile.innerHTML="X";
             tile.classList.add("x");
-            currentPlayer.innerHTML = "Player 'O' Turn";
             matchResult();
+            currentPlayer.innerHTML = "Player 'O' Turn";
         }
     });
 });
@@ -34,6 +34,7 @@ tilesArray.forEach(function (tile){ //forEach method used to apply a function in
 //To check who wins the game or the game become draw
 
 function matchResult(){
+    // If player X win the match
     if(tilesArray.at(0).innerHTML =="X" && tilesArray.at(3).innerHTML=="X" && tilesArray.at(6).innerHTML=="X" ||
        tilesArray.at(1).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(7).innerHTML=="X" ||
        tilesArray.at(2).innerHTML =="X" && tilesArray.at(5).innerHTML=="X" && tilesArray.at(8).innerHTML=="X" ||
@@ -44,9 +45,11 @@ function matchResult(){
        tilesArray.at(0).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(8).innerHTML=="X"){
             result.innerHTML="Player 'X' Wins the game"; // then display Player x is winner in the result place
             result.classList.add('xWin'); // to add a class x to show in color
-            xScore.innerHTML ++ ; // also add 1 point to the xScore
             match = false; //also change the match to false So game cannot be continue
-  
+            xScore.innerHTML ++ ; // also add 1 point to the xScore
+        
+    //Else player O win the watch
+
         }else if(tilesArray.at(0).innerHTML =="O" && tilesArray.at(3).innerHTML=="O" && tilesArray.at(6).innerHTML=="O" || 
                  tilesArray.at(1).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(7).innerHTML=="O" ||
                  tilesArray.at(2).innerHTML =="O" && tilesArray.at(5).innerHTML=="O" && tilesArray.at(8).innerHTML=="O" ||
@@ -58,24 +61,20 @@ function matchResult(){
              
                     result.innerHTML="Player 'O' Wins the game";
                     result.classList.add('oWin');
-                    oScore.innerHTML ++;
                     match = false;
+                    oScore.innerHTML ++;
+
+        //Else the match is draw
 
         }else if(tilesArray.at(0).innerHTML  != "" && tilesArray.at(1).innerHTML != "" && tilesArray.at(2).innerHTML !="" &&
                  tilesArray.at(3).innerHTML != "" && tilesArray.at(4).innerHTML != "" && tilesArray.at(5).innerHTML  !="" &&
                  tilesArray.at(6).innerHTML != "" && tilesArray.at(7).innerHTML != "" && tilesArray.at(8).innerHTML !=""){
                     result.innerHTML = "Match Draw";
                     result.classList.add('drawResult')
-                    draw.innerHTML ++;
                     match = false;
+                    draw.innerHTML ++;
          }
 }
-
-    //To start the game from begining
-
-restartBtn.addEventListener('click', function(){
-    location.reload(); //to restart the game or the page gets reload
-});
 
     //To reset the game after anyone wins or match drawn
 
@@ -86,6 +85,12 @@ resetBtn.addEventListener('click',function(){
     for(let i=0; i<tilesArray.length;i++){
         tilesArray[i].innerHTML=""
     }
+
+    //To start the game from begining
+
+restartBtn.addEventListener('click', function(){
+    location.reload(); //to restart the game or the page gets reload
+});
 
     //To remove the class from each tile to remove text color
 
