@@ -6,8 +6,8 @@ let oScore = document.querySelector(".oScore"); //to display the Player's 'O' sc
 let draw = document.querySelector(".draw"); //to display how many times the match become draw
 let tiles = document.querySelectorAll(".tile"); //play area
 let result = document.querySelector(".result"); //to display the current game winner
-let restartBtn = document.querySelector(".restart"); //to restart the game
-let resetBtn = document.querySelector(".reset"); //to reset the game or to play the next game
+let restartButton = document.querySelector(".restart"); //to restart the game
+let resetButton = document.querySelector(".reset"); //to reset the game or to play the next game
 let match = true; //to stop the game when a player wins or draw
 
 //To set every tiles in an array
@@ -35,14 +35,30 @@ tilesArray.forEach(function (tile){ //forEach method used to apply a function in
 
 function matchResult(){
     // If player X win the match
-    if(tilesArray.at(0).innerHTML =="X" && tilesArray.at(3).innerHTML=="X" && tilesArray.at(6).innerHTML=="X" ||
-       tilesArray.at(1).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(7).innerHTML=="X" ||
-       tilesArray.at(2).innerHTML =="X" && tilesArray.at(5).innerHTML=="X" && tilesArray.at(8).innerHTML=="X" ||
-       tilesArray.at(0).innerHTML =="X" && tilesArray.at(1).innerHTML=="X" && tilesArray.at(2).innerHTML=="X" ||
-       tilesArray.at(3).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(5).innerHTML=="X" ||
-       tilesArray.at(6).innerHTML =="X" && tilesArray.at(7).innerHTML=="X" && tilesArray.at(8).innerHTML=="X" ||
-       tilesArray.at(6).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(2).innerHTML=="X" ||
-       tilesArray.at(0).innerHTML =="X" && tilesArray.at(4).innerHTML=="X" && tilesArray.at(8).innerHTML=="X"){
+    if(tilesArray.at(0).innerHTML =="X" &&
+       tilesArray.at(3).innerHTML =="X" &&
+       tilesArray.at(6).innerHTML =="X" ||
+       tilesArray.at(1).innerHTML =="X" &&
+       tilesArray.at(4).innerHTML =="X" &&
+       tilesArray.at(7).innerHTML =="X" ||
+       tilesArray.at(2).innerHTML =="X" &&
+       tilesArray.at(5).innerHTML =="X" &&
+       tilesArray.at(8).innerHTML =="X" ||
+       tilesArray.at(0).innerHTML =="X" &&
+       tilesArray.at(1).innerHTML =="X" &&
+       tilesArray.at(2).innerHTML =="X" ||
+       tilesArray.at(3).innerHTML =="X" &&
+       tilesArray.at(4).innerHTML =="X" &&
+       tilesArray.at(5).innerHTML =="X" ||
+       tilesArray.at(6).innerHTML =="X" &&
+       tilesArray.at(7).innerHTML =="X" &&
+       tilesArray.at(8).innerHTML =="X" ||
+       tilesArray.at(6).innerHTML =="X" &&
+       tilesArray.at(4).innerHTML =="X" &&
+       tilesArray.at(2).innerHTML =="X" ||
+       tilesArray.at(0).innerHTML =="X" &&
+       tilesArray.at(4).innerHTML =="X" && 
+       tilesArray.at(8).innerHTML =="X"){
             result.innerHTML="Player 'X' Wins the game"; // then display Player x is winner in the result place
             result.classList.add('xWin'); // to add a class x to show in color
             match = false; //also change the match to false So game cannot be continue
@@ -50,14 +66,30 @@ function matchResult(){
         
     //Else player O win the watch
 
-        }else if(tilesArray.at(0).innerHTML =="O" && tilesArray.at(3).innerHTML=="O" && tilesArray.at(6).innerHTML=="O" || 
-                 tilesArray.at(1).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(7).innerHTML=="O" ||
-                 tilesArray.at(2).innerHTML =="O" && tilesArray.at(5).innerHTML=="O" && tilesArray.at(8).innerHTML=="O" ||
-                 tilesArray.at(0).innerHTML =="O" && tilesArray.at(1).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
-                 tilesArray.at(3).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(5).innerHTML=="O" ||
-                 tilesArray.at(6).innerHTML =="O" && tilesArray.at(7).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"||
-                 tilesArray.at(6).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(2).innerHTML=="O" ||
-                 tilesArray.at(0).innerHTML =="O" && tilesArray.at(4).innerHTML=="O" && tilesArray.at(8).innerHTML=="O"){
+        }else if(tilesArray.at(0).innerHTML =="O" &&
+                 tilesArray.at(3).innerHTML =="O" && 
+                 tilesArray.at(6).innerHTML =="O" || 
+                 tilesArray.at(1).innerHTML =="O" && 
+                 tilesArray.at(4).innerHTML =="O" &&
+                 tilesArray.at(7).innerHTML =="O" ||
+                 tilesArray.at(2).innerHTML =="O" &&
+                 tilesArray.at(5).innerHTML =="O" &&
+                 tilesArray.at(8).innerHTML =="O" ||
+                 tilesArray.at(0).innerHTML =="O" &&
+                 tilesArray.at(1).innerHTML =="O" &&
+                 tilesArray.at(2).innerHTML =="O" ||
+                 tilesArray.at(3).innerHTML =="O" &&
+                 tilesArray.at(4).innerHTML =="O" &&
+                 tilesArray.at(5).innerHTML =="O" ||
+                 tilesArray.at(6).innerHTML =="O" &&
+                 tilesArray.at(7).innerHTML =="O" &&
+                 tilesArray.at(8).innerHTML =="O" ||
+                 tilesArray.at(6).innerHTML =="O" &&
+                 tilesArray.at(4).innerHTML =="O" && 
+                 tilesArray.at(2).innerHTML =="O" ||
+                 tilesArray.at(0).innerHTML =="O" && 
+                 tilesArray.at(4).innerHTML =="O" && 
+                 tilesArray.at(8).innerHTML=="O"){
              
                     result.innerHTML="Player 'O' Wins the game";
                     result.classList.add('oWin');
@@ -66,8 +98,8 @@ function matchResult(){
 
         //Else the match is draw
 
-        }else if(tilesArray.at(0).innerHTML  != "" && tilesArray.at(1).innerHTML != "" && tilesArray.at(2).innerHTML !="" &&
-                 tilesArray.at(3).innerHTML != "" && tilesArray.at(4).innerHTML != "" && tilesArray.at(5).innerHTML  !="" &&
+        }else if(tilesArray.at(0).innerHTML != "" && tilesArray.at(1).innerHTML != "" && tilesArray.at(2).innerHTML !="" &&
+                 tilesArray.at(3).innerHTML != "" && tilesArray.at(4).innerHTML != "" && tilesArray.at(5).innerHTML !="" &&
                  tilesArray.at(6).innerHTML != "" && tilesArray.at(7).innerHTML != "" && tilesArray.at(8).innerHTML !=""){
                     result.innerHTML = "Match Draw";
                     result.classList.add('drawResult')
@@ -81,7 +113,7 @@ function matchResult(){
  
     //To reset the game after anyone wins or match drawn
 
-    resetBtn.addEventListener('click',function(){
+    resetButton.addEventListener('click',function(){
 
     //To remove the X and O from the tiles
 
@@ -102,6 +134,6 @@ function matchResult(){
 
    //To start the game from begining
 
-   restartBtn.addEventListener('click', function(){
-    location.reload(); //to restart the game or the page gets reload
+    restartButton.addEventListener('click', function(){
+        location.reload(); //to restart the game or the page gets reload
 });
