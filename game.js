@@ -89,7 +89,6 @@ function matchResult(){
         tilesArray[i].innerHTML=""
     }
 
-    
         //To remove the class from each tile to remove text color
 
     for(let j=0; j<tilesArray.length;j++){
