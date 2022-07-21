@@ -1,4 +1,4 @@
-//To set variables for the required elements
+    //To set variables for the required elements
 
 let currentPlayer = document.querySelector(".playerStats"); //to display player's turn
 let xScore = document.querySelector(".xScore"); //to display the Player 'X' score

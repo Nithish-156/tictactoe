@@ -17,11 +17,11 @@ h1{
 .playerStats{
     text-align: center;
     font-size: large;
-    font-weight: bold ;
+    font-weight: bold;
 }
 
 .gameArea{
-    display: flex;    
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -149,4 +149,5 @@ table,th,tr,td{
       text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
     }
   }
+
   
