@@ -85,7 +85,7 @@ function winningCondition(){
         }
     }
         let diagonal1Sum = boardArray[0][0]+boardArray[1][1]+boardArray[2][2]; //To check first diagonal
-        let diagonal2Sum = boardArray[2][0]+boardArray[1][1]+boardArray[0][2];//To check second diagonal
+        let diagonal2Sum = boardArray[2][0]+boardArray[1][1]+boardArray[0][2]; //To check second diagonal
         if(diagonal1Sum === 3 || diagonal2Sum === 3){
             result.innerHTML="Player 'X' won the match";
             result.classList.add('xWin');
@@ -101,7 +101,7 @@ function winningCondition(){
 function tieCheck(){
     if(match == true && boardArray[0].indexOf(0) == -1 &&
        boardArray[1].indexOf(0)== -1 &&
-       boardArray[2].indexOf(0)==-1){
+       boardArray[2].indexOf(0)== -1){
         result.innerHTML = "Match Draw";
         result.classList.add('tie');
         draw.innerHTML ++;
