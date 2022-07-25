@@ -12,7 +12,7 @@ let playerTurn = 1  //To assume in boardArray for player 'X'
 let boardArray = [[0,0,0],
                   [0,0,0],      //To set every tiles in an array
                   [0,0,0]];
-let tilesArray=Array.from(tiles);
+let tilesArray = Array.from(tiles);
 
     tilesArray.forEach(function (tile,index){ //forEach method used to apply a function in every element of an array
 
