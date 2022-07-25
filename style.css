@@ -16,8 +16,9 @@ h1{
 
 .playerStats{
     text-align: center;
-    font-size: large;
+    font-size: 50px;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .gameArea{
@@ -118,12 +119,12 @@ table,th,tr,td{
       }
 }
 
-.drawResult {
-    animation: 2s anim-drawResult ease 1;
+.tie {
+    animation: 2s anim-tie ease 1;
     font-size: 50px;
   }
   
-  @keyframes anim-drawResult {
+  @keyframes anim-tie {
     0% {
       color: blue;
       transform: scale(0);
