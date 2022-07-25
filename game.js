@@ -18,15 +18,15 @@ let tilesArray=Array.from(tiles);
 
         tile.addEventListener('click',function(){ 
 
-            if(currentPlayer.innerHTML=="Player 'O' Turn" && tile.innerHTML=="" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
+            if(currentPlayer.innerHTML == "Player 'O' Turn" && tile.innerHTML == "" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
             board(index);
             winningCondition();
             tieCheck();
-            currentPlayer.innerHTML="Player 'X' Turn"; //to change the player's turn
-        }else if(currentPlayer.innerHTML=="Player 'X' Turn" && tile.innerHTML=="" && match == true){
-            tile.innerHTML="X";
+            currentPlayer.innerHTML = "Player 'X' Turn"; //to change the player's turn
+        }else if(currentPlayer.innerHTML == "Player 'X' Turn" && tile.innerHTML == "" && match == true){
+            tile.innerHTML = "X";
             tile.classList.add("x");
             board(index);
             winningCondition();
@@ -37,15 +37,15 @@ let tilesArray=Array.from(tiles);
 });
 
 resetButton.addEventListener('click',function(){  //To reset the game after anyone wins or match drawn
-        for(let i=0; i<tilesArray.length;i++){ //To remove the X and O from the tiles
-        tilesArray[i].innerHTML="";
+        for(let i=0; i<tilesArray.length; i++){ //To remove the X and O from the tiles
+        tilesArray[i].innerHTML = "";
     }
-        for(let j=0; j<tilesArray.length;j++){     //To remove the class from each tile to remove text color
+        for(let j=0; j<tilesArray.length; j++){     //To remove the class from each tile to remove text color
         tilesArray[j].classList.remove('x') || tilesArray[j].classList.remove('o');
     }
-    result.innerHTML=""; //to empty the result
+    result.innerHTML = ""; //to empty the result
     result.classList.remove('xWin') || result.classList.remove('oWin') || result.classList.remove('tie') //to remove the class list from result 
-    match=true; //to change the match to true so the game continues
+    match = true; //to change the match to true so the game continues
     boardArray = [[0,0,0],
                   [0,0,0],  //To set the board value to default
                   [0,0,0]];
