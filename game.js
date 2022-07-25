@@ -22,14 +22,14 @@ let tilesArray = Array.from(tiles);
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
             board(index);
-            winningCondition();
+            winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'X' Turn"; //to change the player's turn
         }else if(currentPlayer.innerHTML == "Player 'X' Turn" && tile.innerHTML == "" && match == true){
             tile.innerHTML = "X";
             tile.classList.add("x");
             board(index);
-            winningCondition();
+            winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'O' Turn";
         }
@@ -65,7 +65,7 @@ function board(index){
        playerTurn *= -1;
 }   
 }
-function winningCondition(){
+function winnerCheck(){
     for(let k=0; k<3; k++){
         let rowSum = boardArray[k][0]+boardArray[k][1]+boardArray[k][2];  //TO add in row-wisw
         let colSum = boardArray[0][k]+boardArray[1][k]+boardArray[2][k] ; //To add coloumn-wise
