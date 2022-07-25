@@ -100,8 +100,8 @@ function winnerCheck(){
 }
 function tieCheck(){
     if(match == true && boardArray[0].indexOf(0) == -1 &&
-       boardArray[1].indexOf(0)== -1 &&
-       boardArray[2].indexOf(0)== -1){
+       boardArray[1].indexOf(0) == -1 &&
+       boardArray[2].indexOf(0) == -1){
         result.innerHTML = "Match Draw";
         result.classList.add('tie');
         draw.innerHTML ++;
