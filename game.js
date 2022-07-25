@@ -75,11 +75,13 @@ function winningCondition(){
             result.classList.add('xWin')
             xScore.innerHTML ++
             match = false
+            return
         } else if(rowSum === -3 || colSum === -3){
             result.innerHTML="Player 'O' won the match"
             result.classList.add('oWin')
             oScore.innerHTML ++
             match = false
+            return
         }
     }
         let diagonal1Sum = boardArray[0][0]+boardArray[1][1]+boardArray[2][2] //To check first diagonal
