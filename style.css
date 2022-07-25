@@ -122,6 +122,7 @@ table,th,tr,td{
 .tie {
     animation: 2s anim-tie ease 1;
     font-size: 50px;
+    color: green;
   }
   
   @keyframes anim-tie {
