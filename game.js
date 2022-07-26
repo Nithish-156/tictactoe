@@ -21,14 +21,14 @@ let tilesArray = Array.from(tiles);
             if(currentPlayer.innerHTML == "Player 'O' Turn" && tile.innerHTML == "" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
-            board(index);
+            gameBoard(index);
             winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'X' Turn"; //to change the player's turn
         }else if(currentPlayer.innerHTML == "Player 'X' Turn" && tile.innerHTML == "" && match == true){
             tile.innerHTML = "X";
             tile.classList.add("x");
-            board(index);
+            gameBoard(index);
             winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'O' Turn";
@@ -57,7 +57,7 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
 });
 
 //For board
-function board(index){
+function gameBoard(index){
     let col = index % 3; //To find column in board
     let row = (index - col) / 3; //To find rowArray
     if(board[col][row] == 0){

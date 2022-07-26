@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    cursor: default;
 }
 
 body{
@@ -25,7 +26,6 @@ h1{
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: center;
 } 
 
 .tile{
@@ -152,4 +152,10 @@ table,th,tr,td{
     }
   }
 
-  
+.x:hover{
+  background-color: #6dd5ed;
+}
+
+.o:hover{
+  background-color: #6dd5ed;
+}
