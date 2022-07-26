@@ -58,10 +58,10 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
 
 //For board to find the exact row and coloumn
 function gameboard(index){
-    let col = index % 3; //To find column in board
-    let row = (index - col) / 3; //To find rowArray
-    if(boardValue[col][row] == 0){
-       boardValue[col][row] = playerTurn;
+    let row = index % 3; //To find column in board
+    let col = (index - row) / 3; //To find rowArray
+    if(boardValue[row][col] == 0){
+       boardValue[row][col] = playerTurn;
        playerTurn *= -1;
 }   
 }
