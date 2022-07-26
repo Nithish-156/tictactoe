@@ -47,8 +47,8 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
     result.classList.remove('xWin') || result.classList.remove('oWin') || result.classList.remove('tie') //to remove the class list from result 
     match = true; //to change the match to true so the game continues
     boardValue = [[0,0,0],
-             [0,0,0],  //To set the board value to default
-             [0,0,0]];
+                  [0,0,0],  //To set the board value to default
+                  [0,0,0]];
 });
 
 //To start the game from begining
