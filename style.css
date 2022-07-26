@@ -143,10 +143,6 @@ table,th,tr,td{
   }
 }
 
-.x:hover{
-  background-color: #6dd5ed;
-}
-
-.o:hover{
-  background-color: #6dd5ed;
+.x, .o{
+  pointer-events: none;
 }
