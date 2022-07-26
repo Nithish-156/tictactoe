@@ -64,7 +64,7 @@ function gameboard(index){
 }
 function winnerCheck(){
     for(let k=0; k<3; k++){
-        let rowSum = boardValue[k][0]+boardValue[k][1]+boardValue[k][2];  //TO add in row-wisw
+        let rowSum = boardValue[k][0]+boardValue[k][1]+boardValue[k][2];  //TO add in row-wise
         let colSum = boardValue[0][k]+boardValue[1][k]+boardValue[2][k] ; //To add coloumn-wise
         
         if(rowSum === 3 || colSum === 3){
