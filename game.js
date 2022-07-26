@@ -9,9 +9,9 @@ let restartButton = document.querySelector(".restart"); //To restart the game
 let resetButton = document.querySelector(".reset"); //To reset the game or to play the next game
 let match = true; //To stop the game when a player wins or draw
 let playerTurn = 1  //To assume in board for player 'X'
-let  = [[0,0,0],
-        [0,0,0],      //To set every tiles in an array
-        [0,0,0]];
+let board = [[0,0,0],
+             [0,0,0],      //To set every tiles in an array
+             [0,0,0]];
 let tilesArray = Array.from(tiles);
 
     tilesArray.forEach(function (tile,index){ //forEach method used to apply a function in every element of an array
