@@ -56,7 +56,7 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
         location.reload(); //to restart the game or the page gets reload
 });
 
-//For board
+//For board to find the exact row and coloumn
 function gameBoard(index){
     let col = index % 3; //To find column in board
     let row = (index - col) / 3; //To find rowArray
