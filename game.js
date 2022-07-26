@@ -8,7 +8,7 @@ let result = document.querySelector(".result"); //To display the current game wi
 let restartButton = document.querySelector(".restart"); //To restart the game
 let resetButton = document.querySelector(".reset"); //To reset the game or to play the next game
 let match = true; //To stop the game when a player wins or draw
-let playerTurn = 1  //To assume in board- 1 for player 'X' && -1 for player'O'
+let playerTurn = 1  //To assume in board -1 for player 'X' && -1 for player'O'
 let boardValue = [[0,0,0],
                   [0,0,0],      //To set value to each row in board
                   [0,0,0]];
