@@ -13,11 +13,8 @@ let boardValue = [[0,0,0],
                   [0,0,0],      //To set value to each row in board
                   [0,0,0]];
 let tilesArray = Array.from(tiles);
-
     tilesArray.forEach(function (tile,index){ //forEach method used to apply a function in every element of an array
-
         tile.addEventListener('click',function(){ 
-
             if(currentPlayer.innerHTML == "Player 'O' Turn" && tile.innerHTML == "" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
