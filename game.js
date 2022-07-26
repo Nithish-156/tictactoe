@@ -8,10 +8,10 @@ let result = document.querySelector(".result"); //To display the current game wi
 let restartButton = document.querySelector(".restart"); //To restart the game
 let resetButton = document.querySelector(".reset"); //To reset the game or to play the next game
 let match = true; //To stop the game when a player wins or draw
-let playerTurn = 1  //To assume in boardArray for player 'X'
-let boardArray = [[0,0,0],
-                  [0,0,0],      //To set every tiles in an array
-                  [0,0,0]];
+let playerTurn = 1  //To assume in board for player 'X'
+let  = [[0,0,0],
+        [0,0,0],      //To set every tiles in an array
+        [0,0,0]];
 let tilesArray = Array.from(tiles);
 
     tilesArray.forEach(function (tile,index){ //forEach method used to apply a function in every element of an array
@@ -46,9 +46,9 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
     result.innerHTML = ""; //to empty the result
     result.classList.remove('xWin') || result.classList.remove('oWin') || result.classList.remove('tie') //to remove the class list from result 
     match = true; //to change the match to true so the game continues
-    boardArray = [[0,0,0],
-                  [0,0,0],  //To set the board value to default
-                  [0,0,0]];
+    board = [[0,0,0],
+             [0,0,0],  //To set the board value to default
+             [0,0,0]];
 });
 
 //To start the game from begining
@@ -56,19 +56,19 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
         location.reload(); //to restart the game or the page gets reload
 });
 
-//For boardArray
+//For board
 function board(index){
-    let col = index % 3; //To find column in boardArray
+    let col = index % 3; //To find column in board
     let row = (index - col) / 3; //To find rowArray
-    if(boardArray[col][row] == 0){
-       boardArray[col][row] = playerTurn;
+    if(board[col][row] == 0){
+       board[col][row] = playerTurn;
        playerTurn *= -1;
 }   
 }
 function winnerCheck(){
     for(let k=0; k<3; k++){
-        let rowSum = boardArray[k][0]+boardArray[k][1]+boardArray[k][2];  //TO add in row-wisw
-        let colSum = boardArray[0][k]+boardArray[1][k]+boardArray[2][k] ; //To add coloumn-wise
+        let rowSum = board[k][0]+board[k][1]+board[k][2];  //TO add in row-wisw
+        let colSum = board[0][k]+board[1][k]+board[2][k] ; //To add coloumn-wise
         
         if(rowSum === 3 || colSum === 3){
             result.innerHTML="Player 'X' won the match";
@@ -84,8 +84,8 @@ function winnerCheck(){
             return;
         }
     }
-        let diagonal1Sum = boardArray[0][0]+boardArray[1][1]+boardArray[2][2]; //To check first diagonal
-        let diagonal2Sum = boardArray[2][0]+boardArray[1][1]+boardArray[0][2]; //To check second diagonal
+        let diagonal1Sum = board[0][0]+board[1][1]+board[2][2]; //To check first diagonal
+        let diagonal2Sum = board[2][0]+board[1][1]+board[0][2]; //To check second diagonal
         if(diagonal1Sum === 3 || diagonal2Sum === 3){
             result.innerHTML="Player 'X' won the match";
             result.classList.add('xWin');
@@ -100,9 +100,9 @@ function winnerCheck(){
 }
 function tieCheck(){
     if(match == true && 
-       boardArray[0].indexOf(0) == -1 &&
-       boardArray[1].indexOf(0) == -1 &&
-       boardArray[2].indexOf(0) == -1){
+       board[0].indexOf(0) == -1 &&
+       board[1].indexOf(0) == -1 &&
+       board[2].indexOf(0) == -1){
         result.innerHTML = "Match Draw";
         result.classList.add('tie');
         draw.innerHTML ++;
