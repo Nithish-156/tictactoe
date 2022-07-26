@@ -8,7 +8,7 @@ let result = document.querySelector(".result"); //To display the current game wi
 let restartButton = document.querySelector(".restart"); //To restart the game
 let resetButton = document.querySelector(".reset"); //To reset the game or to play the next game
 let match = true; //To stop the game when a player wins or draw
-let playerTurn = 1  //To assume in board for player 'X'
+let playerTurn = 1  //To assume in board- 1 for player 'X' && -1 for player'O'
 let boardValue = [[0,0,0],
                   [0,0,0],      //To set value to each row in board
                   [0,0,0]];
@@ -21,14 +21,14 @@ let tilesArray = Array.from(tiles);
             if(currentPlayer.innerHTML == "Player 'O' Turn" && tile.innerHTML == "" && match == true){ //if the player turn is O and the match is true and then if the selected tile is empty
             tile.innerHTML="O"; //to add O in the selected tile
             tile.classList.add("o"); //to add a class to the selected tile
-            gameBoard(index);
+            board(index);
             winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'X' Turn"; //to change the player's turn
         }else if(currentPlayer.innerHTML == "Player 'X' Turn" && tile.innerHTML == "" && match == true){
             tile.innerHTML = "X";
             tile.classList.add("x");
-            gameBoard(index);
+            board(index);
             winnerCheck();
             tieCheck();
             currentPlayer.innerHTML = "Player 'O' Turn";
@@ -57,7 +57,7 @@ resetButton.addEventListener('click',function(){  //To reset the game after anyo
 });
 
 //For board to find the exact row and coloumn
-function gameBoard(index){
+function board(index){
     let col = index % 3; //To find column in board
     let row = (index - col) / 3; //To find rowArray
     if(boardValue[col][row] == 0){
