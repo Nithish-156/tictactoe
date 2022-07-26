@@ -66,13 +66,15 @@ function winnerCheck(){
     for(let k=0; k<3; k++){
         let rowSum = boardValue[k][0]+boardValue[k][1]+boardValue[k][2];  //TO add in row-wise
         let colSum = boardValue[0][k]+boardValue[1][k]+boardValue[2][k] ; //To add coloumn-wise
-        if(rowSum === 3 || colSum === 3){
+        if(rowSum === 3 ||
+           colSum === 3){
             result.innerHTML="Player 'X' won the match";
             result.classList.add('xWin');
             xScore.innerHTML ++;
             match = false;
             return;
-        } else if(rowSum === -3 || colSum === -3){
+        } else if(rowSum === -3 || 
+                  colSum === -3){
             result.innerHTML="Player 'O' won the match";
             result.classList.add('oWin');
             oScore.innerHTML ++;
@@ -82,12 +84,14 @@ function winnerCheck(){
     }
         let diagonal1Sum = boardValue[0][0]+boardValue[1][1]+boardValue[2][2]; //To check first diagonal
         let diagonal2Sum = boardValue[2][0]+boardValue[1][1]+boardValue[0][2]; //To check second diagonal
-        if(diagonal1Sum === 3 || diagonal2Sum === 3){
+        if(diagonal1Sum === 3 ||
+           diagonal2Sum === 3){
             result.innerHTML="Player 'X' won the match";
             result.classList.add('xWin');
             xScore.innerHTML ++;
             match = false;
-        }else if((diagonal1Sum === -3 || diagonal2Sum === -3)){
+        }else if((diagonal1Sum === -3 ||
+                  diagonal2Sum === -3)){
             result.innerHTML="Player 'O' won the match";
             result.classList.add('oWin');
             oScore.innerHTML ++;
